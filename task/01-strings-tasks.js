@@ -22,6 +22,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
+    return value1+value2;
     throw new Error('Not implemented');
 }
 
@@ -38,6 +39,7 @@ function concatenateStrings(value1, value2) {
  *   ''      => 0
  */
 function getStringLength(value) {
+    return value.length;
     throw new Error('Not implemented');
 }
 
@@ -55,6 +57,8 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
+    //return "Hello "+firstName + " " + lastName+"!";
+    return `Hello, ${firstName} ${lastName}!`
     throw new Error('Not implemented');
 }
 
@@ -69,6 +73,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
+      return value.substring(7, value.length-1)
     throw new Error('Not implemented');
 }
 
@@ -84,6 +89,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
+    return value.substring(0,1);
     throw new Error('Not implemented');
 }
 
@@ -99,6 +105,7 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
+    return value.trim();
     throw new Error('Not implemented');
 }
 
@@ -114,6 +121,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
+    return value.repeat(count);
     throw new Error('Not implemented');
 }
 
@@ -130,6 +138,10 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
+ 
+    //newStr=newStr[0]+newStr[newStr.length-1];
+ //if (str==='ABABAB') return 'ABAB';
+   return str.replace(value,'');
     throw new Error('Not implemented');
 }
 
@@ -145,6 +157,8 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
+ 
+    return str.substring(1, str.length-1);
     throw new Error('Not implemented');
 }
 
@@ -160,6 +174,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
+    return str.toUpperCase();
     throw new Error('Not implemented');
 }
 
@@ -174,6 +189,10 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
+   // while (str.includes(";")){
+        
+   // }
+    return  str.split(';');
     throw new Error('Not implemented');
 }
 
