@@ -222,12 +222,22 @@ function extractEmails(str) {
 function getRectangleString(width, height) {
     // let width[0].toString() = '┌';
 let result='';
-height--;
 result+='┌';
-for(let tempx=width-2;tempx>=0;tempwidth--){result+='-';}
+for(let tempx=width-2;tempx>0;tempx--){result+='─';}
 result+='┐\n';
 
+for (let tempy=height-2;tempy>0;tempy--)
+{
+    result+='│';
+    for(let tempx=width-2;tempx>0;tempx--){result+=' ';}
+    result+='│\n';
+}
 
+result+='└';
+for(let tempx=width-2;tempx>0;tempx--){result+='─';}
+result+='┘\n';
+
+ return(result);
     // if()
     throw new Error('Not implemented');
 }
