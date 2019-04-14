@@ -39,15 +39,14 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   let foo = [];
-
-for (let i = 1; i <= len; i++) {
-   if(i%2 != 0) {
-      foo.push(i)
-   };
-}
-   return foo;
+   let array = new Array(len);
+   array.fill(1);
+   return array.map((elem, index) => {
+       elem = index * 2 + 1;
+       return elem;
+   })
    throw new Error('Not implemented');
+
 }
 
 
@@ -63,6 +62,10 @@ for (let i = 1; i <= len; i++) {
  *    [] => [] 
  */
 function doubleArray(arr) {
+   arr.map(elem => {
+      arr.push(elem);
+  });
+  return arr;
    throw new Error('Not implemented');
 }
 
