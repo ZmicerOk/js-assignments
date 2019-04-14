@@ -134,6 +134,18 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
+    let a = Math.atan2(y1/x1);
+    let b = Math.atan2(y2/x2);
+    if(x1==0)a=Math.PI/2*Math.sign(y1);
+    if(x2==0)b=Math.PI/2*Math.sign(y2);
+    if(y1==0)a=0;
+    if(y2==0)b=0;
+    let g = Math.abs(a-b);
+    if(g>Math.PI)
+    {
+        g=g-Math.PI*(Math.floor(g/Math.PI));
+    }
+    return g;
     throw new Error('Not implemented');
 }
 
@@ -169,6 +181,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
+    return +value;
     throw new Error('Not implemented');
 }
 
@@ -198,9 +211,9 @@ function getParallelipidedDiagonal(a,b,c) {
  * @return {number}
  *  
  * @example:
- *   1234, 0  => 1234
- *   1234, 1  => 1230
- *   1234, 2  => 1200
+ *   1234, 0  => 1234  1234 - 1234%1
+ *   1234, 1  => 1230  1234 - 1234%10
+ *   1234, 2  => 1200  1234 - 1234%100
  *   1234, 3  => 1000
  *   1678, 0  => 1678
  *   1678, 1  => 1680
@@ -208,6 +221,9 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
+    let result=num;
+    result=(Math.pow(10,pow))*Math.round(result/(Math.pow(10,pow)));
+    return result;
     throw new Error('Not implemented');
 }
 

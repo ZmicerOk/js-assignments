@@ -259,8 +259,6 @@ result+='┘\n';
  *
  */
 function encodeToRot13(str) {
-    
-
 
     throw new Error('Not implemented');
 }
