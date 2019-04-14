@@ -122,6 +122,14 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
+   function ff(v,i,a) {
+      return v>0; }
+    //var mf=[5,12,3,15,7];
+    //console.log( arr.filter(ff) );
+    //[ 5, 3, 7 ]
+
+
+return arr.filter(ff);
    throw new Error('Not implemented');
 }
 
