@@ -82,6 +82,9 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
+   return arr.filter(elem => {
+      return elem > 0;
+  });
    throw new Error('Not implemented');
 }
 
@@ -97,6 +100,11 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
+   return arr.filter(elem => {
+      if (typeof elem === 'string' || elem instanceof String){
+      return elem;
+      }
+  });
    throw new Error('Not implemented');
 }
 
