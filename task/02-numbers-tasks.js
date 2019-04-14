@@ -56,7 +56,25 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-    if(value1<value1.MAX_VALUE && value2<value2.MAX_VALUE) return ((value1+value2)/2);
+//    if(value1<value1.MAX_VALUE && value2<value2.MAX_VALUE){ 
+//         return ((value1+value2)/2);
+//     }
+//  if(value1==Infinity || value2==Infinity){
+//         return Infinity;
+//     }
+// let isInf=false;
+// let isInf2=false;
+if(isNaN(value1)){isInf=true}
+if(isNaN(value2)){isInf2=true}
+if (!isNaN(value1+value2)){
+   
+    return (value1/2)+(value2/2);
+    // else if(isInf&&isInf2)
+    // {
+    //     console.log(123);
+    //     return Infinity*Math.sign(value1+value2);
+    // }else {return 0;}
+}
     throw new Error('Not implemented');
 }
 
@@ -76,6 +94,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
+    return Math.sqrt((x2-x1)**2 + (y1-y2)**2);
     throw new Error('Not implemented');
 }
 
@@ -92,6 +111,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
+    return -b/a;
     throw new Error('Not implemented');
 }
 
@@ -130,6 +150,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
+    let str = value.toString();
+   console.log(+str[str.length-1]);
+    return parseInt(str[str.length-1]);
     throw new Error('Not implemented');
 }
 
@@ -163,6 +186,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
+    return Math.sqrt(a**2 + b**2 +c**2);
     throw new Error('Not implemented');
 }
 
