@@ -259,7 +259,35 @@ result+='┘\n';
  *
  */
 function encodeToRot13(str) {
+    let nums2=[];
+    var nums=str.split("");
+    let tempChar='';
+    nums.forEach(function(element) {
+        if(' .,?!;`@'.indexOf(element)>-1)
+        {
+            tempChar=element;
+        }
+        else if(( (element.charCodeAt(0))<=("Z".charCodeAt(0))&&(element.charCodeAt(0)+13)>=("A".charCodeAt(0))&&(element.charCodeAt(0)+13)<=("Z".charCodeAt(0)))||( (element.charCodeAt(0)+13)>=("a".charCodeAt(0))&&(element.charCodeAt(0)+13)<=("z".charCodeAt(0))&&(element.charCodeAt(0))>=("a".charCodeAt(0))))
+        {
+        tempChar=(String.fromCharCode(element.charCodeAt(0)+13));
+        }
+        else if(((element.charCodeAt(0)+13)>("Z".charCodeAt(0)))&&((element.charCodeAt(0)+13)<("a".charCodeAt(0))))
+        {
+            let coef=12;
+            coef-='Z'.charCodeAt(0)-element.charCodeAt(0);
+        tempChar=(String.fromCharCode("A".charCodeAt(0)+coef));   
+        }
+        else
+        {
+            let coef=12;
+            coef-='z'.charCodeAt(0)-element.charCodeAt(0);
+        tempChar=(String.fromCharCode("a".charCodeAt(0)+coef));   
+        }
 
+        nums2.push(tempChar);
+      
+    });
+    return(nums2.join(""));
     throw new Error('Not implemented');
 }
 

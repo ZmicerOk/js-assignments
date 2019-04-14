@@ -245,6 +245,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
+    
+    let sqr1=Math.ceil(Math.sqrt(n));
+    if(n==2)return true;
+    for (;sqr1>1;sqr1--){
+        if(n%sqr1==0)return false;
+    }
+    return true;
+
     throw new Error('Not implemented');
 }
 
